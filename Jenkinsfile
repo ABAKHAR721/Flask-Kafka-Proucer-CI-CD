@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        DOCKER_IMAGE = 'myrepo/service-a:${env.BUILD_NUMBER}'
+        DOCKER_IMAGE = 'abakhar217/service-a:${env.BUILD_NUMBER}'
         K8S_DEPLOYMENT = 'service-a-deployment.yaml'
         K8S_SERVICE = 'service-a-service.yaml'
     }
