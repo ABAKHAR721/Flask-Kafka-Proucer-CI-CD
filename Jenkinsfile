@@ -32,8 +32,10 @@ pipeline {
         stage('Deploy to Kubernetes') {
             steps {
                 script {
-                    sh "kubectl apply -f k8s/$K8S_DEPLOYMENT"
-                    sh "kubectl apply -f k8s/$K8S_SERVICE"
+                         kubeconfig(credentialsId: 'kubeconfig', serverUrl: '') {
+                            sh "kubectl apply -f k8s/$K8S_DEPLOYMENT"
+                            sh "kubectl apply -f k8s/$K8S_SERVICE"
+                        }
                 }
             }
         }
