@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: service-a
-          image: myrepo/service-a
+          image: abakhar217/service-b:latest
           ports:
             - containerPort: 8080
           env:
